@@ -8,6 +8,8 @@
         <attr name="starsBackImage" format="reference"/>
         <attr name="spanSize" format="dimension"/>
         <attr name="rating" format="float"/>
+        <attr name="bitmapWidth" format="dimension"/>
+        <attr name="bitmapHeight" format="dimension"/>
     </declare-styleable>
 
 

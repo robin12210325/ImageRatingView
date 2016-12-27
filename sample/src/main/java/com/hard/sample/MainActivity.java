@@ -1,7 +1,7 @@
 package com.hard.sample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.hard.imageratingview.ImageRatingView;
 
@@ -18,5 +18,7 @@ public class MainActivity extends AppCompatActivity {
         imageRatingView= (ImageRatingView) findViewById(R.id.image_rating_view);
 
         imageRatingView.setRating(100);
+
+
     }
 }

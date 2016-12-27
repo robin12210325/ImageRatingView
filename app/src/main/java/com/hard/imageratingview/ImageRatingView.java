@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.TypedValue;
+import android.view.MotionEvent;
 import android.view.View;
 
 /**
@@ -100,7 +101,12 @@ public class ImageRatingView extends View {
         mSpanSize = a.getDimensionPixelSize(R.styleable.ImageRatingView_spanSize, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                         DEFAULT_SPAN_SIZE, getResources().getDisplayMetrics()));
         mRating = a.getFloat(R.styleable.ImageRatingView_rating, DEFAULT_RATING);
+        mBitmapDstWidth = a.getDimensionPixelSize(R.styleable.ImageRatingView_bitmapWidth, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+              0, getResources().getDisplayMetrics()));
+        mBitmapDstHeight = a.getDimensionPixelSize(R.styleable.ImageRatingView_bitmapHeight, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+               0, getResources().getDisplayMetrics()));
         a.recycle();
+
     }
 
 
@@ -117,8 +123,10 @@ public class ImageRatingView extends View {
             mBitmapDstWidth =(mViewWidth-mSpanSize*(mMaxCount-1))/ mMaxCount;
         } else {
             //如果是wrap_content则等于bitmap数量*图片宽度+间隔宽度*（bitmap数量-1）
-            mViewWidth = mMaxCount * mFront.getWidth()+mSpanSize*(mMaxCount-1);
-            mBitmapDstWidth = mFront.getWidth();
+            if(mBitmapDstWidth==0){
+                mBitmapDstWidth=mFront.getWidth();
+            }
+            mViewWidth = mMaxCount * mBitmapDstWidth+mSpanSize*(mMaxCount-1);
         }
 
         specMode =MeasureSpec.getMode(heightMeasureSpec);
@@ -126,8 +134,10 @@ public class ImageRatingView extends View {
             mViewHeight=MeasureSpec.getSize(heightMeasureSpec);
             mBitmapDstHeight=mViewHeight>mFront.getHeight()?mFront.getHeight():mViewHeight;
         }else{
-            mViewHeight= mFront.getHeight();
-            mBitmapDstHeight = mFront.getHeight();
+            if(mBitmapDstHeight==0){
+                mBitmapDstHeight=mFront.getHeight();
+            }
+            mViewHeight= mBitmapDstHeight;
         }
         setMeasuredDimension(mViewWidth, mViewHeight);
     }
@@ -144,7 +154,19 @@ public class ImageRatingView extends View {
         }
     }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if(!mTouchable)
+            return false;
+        if(event.getAction()==MotionEvent.ACTION_MOVE){
 
+        }else if(event.getAction()==MotionEvent.ACTION_DOWN){
+
+        }else if(event.getAction()==MotionEvent.ACTION_UP) {
+
+        }
+        return true;
+    }
 
     /**
      * 画出已打分的部分,(除了最后一个)
