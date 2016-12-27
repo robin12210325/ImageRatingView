@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ImageRatingView">
+        <attr name="starsCount" format="integer" />
+        <attr name="minStep" format="float" />
+        <attr name="starsImage" format="reference"/>
+        <attr name="starsBackImage" format="reference"/>
+        <attr name="spanSize" format="dimension"/>
+        <attr name="rating" format="float"/>
+    </declare-styleable>
+
+
+</resources>
