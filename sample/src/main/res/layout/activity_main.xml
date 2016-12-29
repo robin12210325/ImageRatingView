@@ -1,17 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/activity_main"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.hard.sample.MainActivity">
 
     <com.hard.imageratingview.ImageRatingView
+        android:id="@+id/sample0"
         android:layout_width="wrap_content"
-        android:id="@+id/image_rating_view"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:bitmapWidth="40dp"
-        app:bitmapHeight="40dp"
-        app:spanSize="10dp"
-        android:layout_height="wrap_content"/>
+        app:touchable="true" />
+
+    <com.hard.imageratingview.ImageRatingView
+        android:id="@+id/sample1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:imageHeight="30dp"
+        app:imageWidth="30dp"
+        app:touchable="true" />
+
+
+    <com.hard.imageratingview.ImageRatingView
+        android:id="@+id/sample2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:frontImage="@drawable/ic_favorite_border_red_a700_24dp"
+        app:backImage="@drawable/ic_favorite_red_a700_24dp"
+        android:layout_marginTop="10dp"
+        app:touchable="true" />
+
+
+    <com.hard.imageratingview.ImageRatingView
+        android:id="@+id/sample3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:touchable="true" />
+
+    <com.hard.imageratingview.ImageRatingView
+        android:id="@+id/sample4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        app:touchable="true" />
+
+
 </LinearLayout>

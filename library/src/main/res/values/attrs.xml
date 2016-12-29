@@ -4,12 +4,13 @@
     <declare-styleable name="ImageRatingView">
         <attr name="starsCount" format="integer" />
         <attr name="minStep" format="float" />
-        <attr name="starsImage" format="reference"/>
-        <attr name="starsBackImage" format="reference"/>
+        <attr name="frontImage" format="reference"/>
+        <attr name="backImage" format="reference"/>
         <attr name="spanSize" format="dimension"/>
         <attr name="rating" format="float"/>
-        <attr name="bitmapWidth" format="dimension"/>
-        <attr name="bitmapHeight" format="dimension"/>
+        <attr name="touchable" format="boolean"/>
+        <attr name="imageWidth" format="dimension"/>
+        <attr name="imageHeight" format="dimension"/>
     </declare-styleable>
 
 
