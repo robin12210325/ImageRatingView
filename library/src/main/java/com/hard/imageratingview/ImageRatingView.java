@@ -27,7 +27,7 @@ public class ImageRatingView extends View {
     /**
      * 默认图片间隔(dp)
      */
-    private final static int DEFAULT_SPAN_SIZE = 0;
+    private final static int DEFAULT_SPAN_SIZE =0;
     /**
      * 默认分数
      */
