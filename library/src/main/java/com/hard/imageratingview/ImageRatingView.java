@@ -287,6 +287,14 @@ public class ImageRatingView extends View {
     }
 
     /**
+     * 获得当前评分
+     * @return
+     */
+    public float getRating(){
+        return mRating;
+    }
+
+    /**
      * 设置是否可触摸
      *
      * @param touchable
