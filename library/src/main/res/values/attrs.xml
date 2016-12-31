@@ -2,7 +2,7 @@
 <resources>
 
     <declare-styleable name="ImageRatingView">
-        <attr name="starsCount" format="integer" />
+        <attr name="maxCount" format="integer" />
         <attr name="minStep" format="float" />
         <attr name="frontImage" format="reference"/>
         <attr name="backImage" format="reference"/>

@@ -10,6 +10,7 @@
 
     <com.hard.imageratingview.ImageRatingView
         android:id="@+id/sample0"
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -23,6 +24,9 @@
         android:layout_marginTop="10dp"
         app:imageHeight="30dp"
         app:imageWidth="30dp"
+        app:spanSize="10dp"
+        app:minStep="0.5"
+        app:maxCount="7"
         app:touchable="true" />
 
 
@@ -31,27 +35,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        app:frontImage="@drawable/ic_favorite_border_red_a700_24dp"
-        app:backImage="@drawable/ic_favorite_red_a700_24dp"
+        app:backImage="@drawable/ic_favorite_border_red_a700_24dp"
+        app:frontImage="@drawable/ic_favorite_red_a700_24dp"
         android:layout_marginTop="10dp"
         app:touchable="true" />
 
 
-    <com.hard.imageratingview.ImageRatingView
-        android:id="@+id/sample3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        app:touchable="true" />
 
-    <com.hard.imageratingview.ImageRatingView
-        android:id="@+id/sample4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        app:touchable="true" />
 
 
 </LinearLayout>

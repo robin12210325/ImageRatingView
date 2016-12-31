@@ -19,7 +19,7 @@ public class ImageRatingView extends View {
     /**
      * 默认评分最大值
      */
-    private final static int DEFAULT_MAX_COUNT = 8;
+    private final static int DEFAULT_MAX_COUNT = 5;
     /**
      * 默认评分最小跨度
      */
@@ -27,11 +27,11 @@ public class ImageRatingView extends View {
     /**
      * 默认图片间隔(dp)
      */
-    private final static int DEFAULT_SPAN_SIZE = 10;
+    private final static int DEFAULT_SPAN_SIZE = 0;
     /**
      * 默认分数
      */
-    private final static float DEFAULT_RATING = 5.1f;
+    private final static float DEFAULT_RATING = 5f;
 
     /**
      * 评分最大值
@@ -95,7 +95,7 @@ public class ImageRatingView extends View {
     private void initAttrs(Context context, AttributeSet attrs) {
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ImageRatingView);
         mMinStep = a.getFloat(R.styleable.ImageRatingView_minStep, DEFAULT_MIN_STEP);
-        mMaxCount = a.getInt(R.styleable.ImageRatingView_starsCount, DEFAULT_MAX_COUNT);
+        mMaxCount = a.getInt(R.styleable.ImageRatingView_maxCount, DEFAULT_MAX_COUNT);
         mFront = BitmapFactory.decodeResource(getResources(), a.getResourceId(R.styleable.ImageRatingView_frontImage, R.drawable.ic_star_amber_a200_24dp));
         mBack = BitmapFactory.decodeResource(getResources(), a.getResourceId(R.styleable.ImageRatingView_backImage, R.drawable.ic_star_white_24dp));
         mSpanSize = a.getDimensionPixelSize(R.styleable.ImageRatingView_spanSize, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
