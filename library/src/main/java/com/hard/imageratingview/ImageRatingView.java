@@ -27,7 +27,7 @@ public class ImageRatingView extends View {
     /**
      * 默认图片间隔(dp)
      */
-    private final static int DEFAULT_SPAN_SIZE =0;
+    private final static int DEFAULT_SPAN_SIZE = 0;
     /**
      * 默认分数
      */
@@ -77,6 +77,10 @@ public class ImageRatingView extends View {
      * 是否可触摸操作
      */
     private boolean mTouchable;
+    /**
+     * 评分变化监听器
+     */
+    private OnRatingChangedListener mListener;
 
     public ImageRatingView(Context context) {
         this(context, null);
@@ -171,6 +175,9 @@ public class ImageRatingView extends View {
             if (x < 0 || x > mViewWidth || y < 0 || y > mViewHeight)
                 return false;
             rating(x);
+        }
+        if (mListener != null) {
+            mListener.ratingChanged(mRating);
         }
         return true;
     }
@@ -288,9 +295,10 @@ public class ImageRatingView extends View {
 
     /**
      * 获得当前评分
+     *
      * @return
      */
-    public float getRating(){
+    public float getRating() {
         return mRating;
     }
 
@@ -301,6 +309,22 @@ public class ImageRatingView extends View {
      */
     public void setTouchable(boolean touchable) {
         mTouchable = touchable;
+    }
+
+    /**
+     * 评分变化监听
+     */
+    public interface OnRatingChangedListener {
+
+        void ratingChanged(float rating);
+    }
+
+    /**
+     * 设置评分监听
+     * @param l
+     */
+    public void setOnRatingChangedListener(OnRatingChangedListener l) {
+        mListener = l;
     }
 }
 
